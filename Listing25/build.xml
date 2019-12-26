@@ -1,0 +1,14 @@
+<project name="buildjar" default="main">
+	<property name="output.dir" value="/mnt/program_objects/lib"/>
+	<basename property="project.name" file="${basedir}"/>
+
+	<target name="main">
+		<jar jarfile="${output.dir}/${project.name}.jar">
+			<fileset
+				dir="bin/"
+				includes="**/*"
+				excludes="**/*Runner.*,**/log4j.properties">
+			</fileset>
+		</jar>
+	</target>
+</project>
